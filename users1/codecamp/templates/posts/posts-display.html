@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description</th>
+      <th>date</th>
+      <th>update</th>
+      <th>delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in posts %}
+    <tr>
+      <td>{{ post.name }}</td>
+      <td>{{ post.description }}</td>
+      <td>{{ post.date }}</td>
+      <td>
+        <a href="{% url 'updateposts' post.id %}"><button>update</button> </a>
+      </td>
+      <td>
+        <a href="{% url 'deleteposts' post.id %}"><button>delete</button> </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br />
+<br />
+<br />
+
+<a href="{% url 'add-posts' %}">add-posts</a>
+
+<br />
+<br />
+<br />
+
+<a href="{% url 'logout' %}">Logout</a>
+
+{% endblock %}

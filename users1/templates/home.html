@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Home Page</h1>
+
+<p>click <a href="{% url 'about' %}"> about </a> here</p>
+<p>if you already have an account <a href="{% url 'login' %}">login</a></p>
+<p>if you don't have an account <a href="{% url 'signup' %}">signup</a></p>
+
+{% endblock %}
